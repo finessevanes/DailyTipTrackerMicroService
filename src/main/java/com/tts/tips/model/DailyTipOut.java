@@ -12,18 +12,17 @@ public class DailyTipOut {
 	
 	public Long id;
 	public String date;
-	public Integer savingsRate;
+	public Float savingsRate;
 	public Integer tipAmount;
 	public Integer amountSaved;
 	
 	public DailyTipOut() {}
 
-	public DailyTipOut(Long id, String date, Integer savingsRate, Integer tipAmount, Integer amountSaved) {
-		this.id = id;
+	public DailyTipOut(String date, Float savingsRate, Integer tipAmount) {
 		this.date = date;
 		this.savingsRate = savingsRate;
 		this.tipAmount = tipAmount;
-		this.amountSaved = amountSaved;
+		this.amountSaved = new Integer ((int)Math.ceil(tipAmount*savingsRate));
 	}
 
 	public String getDate() {
@@ -34,11 +33,11 @@ public class DailyTipOut {
 		this.date = date;
 	}
 
-	public Integer getSavingsRate() {
+	public Float getSavingsRate() {
 		return savingsRate;
 	}
 
-	public void setSavingsRate(Integer savingsRate) {
+	public void setSavingsRate(Float savingsRate) {
 		this.savingsRate = savingsRate;
 	}
 
@@ -50,21 +49,26 @@ public class DailyTipOut {
 		this.tipAmount = tipAmount;
 	}
 
+	
 	public Integer getAmountSaved() {
-		return amountSaved;
+		return new Integer ((int)Math.ceil(tipAmount*savingsRate));
 	}
+	
+//	public Integer getAmountSaved() {
+//		return amountSaved;
+//	}
 
-	public void setAmountSaved(Integer amountSaved) {
-		this.amountSaved = amountSaved;
-	}
+//	public void setAmountSaved(Integer amountSaved) {
+//		this.amountSaved = amountSaved;
+//	}
+	
+//	public void calcAmountSaved() {
+//		this.amountSaved = this.savingsRate*tipAmount;
+//	}
 
 	@Override
 	public String toString() {
 		return "DailyTipOut [date=" + date + ", savingsRate=" + savingsRate + ", tipAmount=" + tipAmount
 				+ ", amountSaved=" + amountSaved + "]";
-	}
-	
-	
-
-	
+	}	
 }

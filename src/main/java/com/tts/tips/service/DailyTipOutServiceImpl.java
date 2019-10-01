@@ -17,4 +17,13 @@ public class DailyTipOutServiceImpl implements DailyTipOutServiceInt{
 		return dailyTipOutRepository.findAll();
 	}
 
+	public void saveDailyTipOut(DailyTipOut dailyTipOut) {
+//		dailyTipOut.calcAmountSaved();
+		dailyTipOutRepository.save(dailyTipOut);
+	}
+
+	public void deleteDailyTipOutUsingId(Long id) {
+		dailyTipOutRepository.deleteById(id);
+	}
+
 }
