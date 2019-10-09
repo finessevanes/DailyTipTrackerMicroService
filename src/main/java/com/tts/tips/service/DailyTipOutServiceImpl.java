@@ -51,5 +51,10 @@ public class DailyTipOutServiceImpl implements DailyTipOutServiceInt{
 		currentDailyTipOut.setTipAmount(tipAmount);
 		dailyTipOutRepository.save(currentDailyTipOut);	
 	}
+	
+	@Override
+	public void deleteAllDailyTipOuts() {
+		dailyTipOutRepository.deleteAll();
+	}
 }
 

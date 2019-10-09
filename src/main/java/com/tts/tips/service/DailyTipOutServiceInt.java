@@ -16,5 +16,7 @@ public interface DailyTipOutServiceInt{
 	public void deleteDailyTipOutUsingId(Long id);
 	
 	//5
-	void updateDailyTipOut(Long id, DailyTipOut dailyTipOutChanges);
+	public void updateDailyTipOut(Long id, DailyTipOut dailyTipOutChanges);
+	
+	public void deleteAllDailyTipOuts();
 }

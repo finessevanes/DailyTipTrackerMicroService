@@ -17,4 +17,5 @@ public interface DailyTipOutRepository extends CrudRepository<DailyTipOut, Long>
 	// .deleteById is included in Crud
 	//5
 	
+	// deleteAll is also in crud
 }
