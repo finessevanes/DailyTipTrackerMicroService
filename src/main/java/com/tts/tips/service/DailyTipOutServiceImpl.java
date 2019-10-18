@@ -38,17 +38,22 @@ public class DailyTipOutServiceImpl implements DailyTipOutServiceInt{
 		dailyTipOutRepository.deleteById(id);
 	}
 
-//	@Override
+	@Override
 	public void updateDailyTipOut(Long id, DailyTipOut dailyTipOutChanges) {
 		DailyTipOut currentDailyTipOut = dailyTipOutRepository.findDailyTipOutById(id);
-		
-		String date = currentDailyTipOut.getDate();
-		Float savingsRate = currentDailyTipOut.getSavingsRate();
-		Integer tipAmount = currentDailyTipOut.getTipAmount();
+
+		String date = dailyTipOutChanges.getDate();
+		Float savingsRate = dailyTipOutChanges.getSavingsRate();
+		Integer tipAmount = dailyTipOutChanges.getTipAmount();
+		Integer amountSaved = dailyTipOutChanges.getAmountSaved();
 		
 		currentDailyTipOut.setDate(date);
 		currentDailyTipOut.setSavingsRate(savingsRate);
 		currentDailyTipOut.setTipAmount(tipAmount);
+		currentDailyTipOut.setAmountSaved(amountSaved);
+		
+		System.out.println(currentDailyTipOut);
+
 		dailyTipOutRepository.save(currentDailyTipOut);	
 	}
 	

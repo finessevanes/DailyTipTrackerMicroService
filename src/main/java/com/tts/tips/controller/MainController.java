@@ -25,41 +25,33 @@ public class MainController {
 	public String index() {
 		return "<h1>Daily Tip Out Example</h1>";
 	}
-	
-	//1
-	@CrossOrigin//(origins = "http://localhost:3000")
+	@CrossOrigin
+	@PostMapping("/tip")
+	public void saveTip(@RequestBody DailyTipOut dailyTipOut) {
+		dailyTipOutServiceImpl.saveDailyTipOut(dailyTipOut);
+	}
+	@CrossOrigin
 	@GetMapping("/tips")
 	public ArrayList<DailyTipOut> showAllTips() {
 		return dailyTipOutServiceImpl.getAll();
 	}
-	//2
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin
 	@GetMapping("/tip/{id}")
 	public DailyTipOut getTipOut(@PathVariable Long id) {
 		return dailyTipOutServiceImpl.getDailyTipOutUsingId(id);
 	}	
-	//3
-	@CrossOrigin(origins = "http://localhost:3000")
-	@PostMapping("/tip")
-	public void saveTip(@RequestBody DailyTipOut dailyTipOut) {
-		dailyTipOutServiceImpl.saveDailyTipOut(dailyTipOut);
-	}	
-	//4
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin
 	@DeleteMapping("/tip/{id}")
 	public void deleteDailyTipOut(@PathVariable Long id) {
 		dailyTipOutServiceImpl.deleteDailyTipOutUsingId(id);
 	}	
-	
-	// delete all dogs
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin
 	@DeleteMapping("/tips")
 	public void deleteDailyTipOuts() {
 		dailyTipOutServiceImpl.deleteAllDailyTipOuts();
 	}
-//	//5
-	@CrossOrigin(origins = "http://localhost:3000")
-	@PutMapping("tips/update{id}")
+	@CrossOrigin
+	@PutMapping("/tip/{id}")
 	public void updateDailyTipOut(@PathVariable Long id, @RequestBody DailyTipOut dailyTipOut) {
 		dailyTipOutServiceImpl.updateDailyTipOut(id, dailyTipOut);
 	}	

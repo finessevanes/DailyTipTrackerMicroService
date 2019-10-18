@@ -28,7 +28,6 @@ public class DailyTipOut {
 	public String getDate() {
 		return date;
 	}
-
 	public void setDate(String date) {
 		this.date = date;
 	}
@@ -36,7 +35,6 @@ public class DailyTipOut {
 	public Float getSavingsRate() {
 		return savingsRate;
 	}
-
 	public void setSavingsRate(Float savingsRate) {
 		this.savingsRate = savingsRate;
 	}
@@ -44,34 +42,13 @@ public class DailyTipOut {
 	public Integer getTipAmount() {
 		return tipAmount;
 	}
-
 	public void setTipAmount(Integer tipAmount) {
 		this.tipAmount = tipAmount;
 	}
 	
-	
-
-//	
-//	public Integer getAmountSaved() {
-//		return amountSaved;
-//	}
-	
-//	public Integer getAmountSaved() {
-//		return amountSaved;
-//	}
-
-//	public void setAmountSaved(Integer amountSaved) {
-//		this.amountSaved = amountSaved;
-//	}
-	
-//	public void calcAmountSaved() {
-//		this.amountSaved = this.savingsRate*tipAmount;
-//	}
-
 	public Integer getAmountSaved() {
 		return amountSaved;
 	}
-
 	public void setAmountSaved(Integer amountSaved) {
 		this.amountSaved = amountSaved;
 	}
